@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-powered sales outreach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h2>Lead details</h2>
+    <form id="lead-form" autocomplete="off">
+      <label>Lead name<input name="lead_name" value="UiPath" required></label>
+      <label>Industry<input name="industry" value="Robotic Process Automation (RPA)" required></label>
+      <label>Key decision maker<input name="decision_maker" value="Daniel Dines" required></label>
+      <label>Position<input name="position" value="CEO" required></label>
+      <label>Milestone<input name="milestone" value="AI-driven automation product launch" required></label>
+      <button type="submit" id="run-btn" class="btn primary">Run the crew</button>
+    </form>
+    <p id="health" class="health" aria-live="polite"></p>
+  </aside>
+
+  <main>
+    <header>
+      <h1>AI-powered sales outreach</h1>
+      <p class="sub">From lead discovery to personalized engagement.</p>
+    </header>
+
+    <section class="agents">
+      <article class="card agent">
+        <span class="dot green"></span>
+        <div>
+          <h3>Sales Representative</h3>
+          <p>Identifies high-value leads that match our ideal customer profile. Tools: web search, instruction files.</p>
+        </div>
+      </article>
+      <article class="card agent">
+        <span class="dot gold"></span>
+        <div>
+          <h3>Lead Sales Representative</h3>
+          <p>Nurtures leads with personalized, compelling communications. Tools: instruction files, sentiment check.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="progress" class="card progress" hidden>
+      <ol>
+        <li data-stage="profiling">Lead profiling: researching the company</li>
+        <li data-stage="outreach">Personalized outreach: drafting emails</li>
+      </ol>
+    </section>
+
+    <section id="error" class="card error" role="alert" hidden></section>
+
+    <section id="empty" class="card">
+      <h3>Ready when you are</h3>
+      <p>Fill in the lead details on the left and choose Run the crew. You'll get a lead profile report and a series of tailored email drafts.</p>
+    </section>
+
+    <section id="results" hidden>
+      <div class="tabs" role="tablist">
+        <button role="tab" class="tab active" data-tab="profile" aria-selected="true">Lead profile report</button>
+        <button role="tab" class="tab" data-tab="campaign" aria-selected="false">Personalized outreach campaign</button>
+      </div>
+      <article id="panel" class="prose"></article>
+      <div class="actions">
+        <button id="copy-btn" class="btn ghost">Copy</button>
+        <button id="download-btn" class="btn ghost">Download</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
