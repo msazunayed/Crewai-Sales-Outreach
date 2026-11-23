@@ -5,17 +5,24 @@ personalized emails; a plain HTML/CSS/JS frontend (white and cream theme) drives
 
 ```
 crewai-sales-outreach/
-├── ai/                  CrewAI agents, tasks, tools + FastAPI server
-│   ├── main.py          API (/api/run, /api/jobs/{id}) and static hosting for frontend
-│   ├── crew.py          agents, tasks, crew
-│   ├── tools.py         custom SentimentAnalysisTool
-│   └── instructions/    guidelines the agents read
-├── frontend/            index.html, style.css, app.js
+├── ai/                          CrewAI agents, tasks, tools + FastAPI server
+│   ├── main.py                  API (/api/run, /api/jobs/{id}) and static hosting for frontend
+│   ├── crew.py                  agents, tasks, crew
+│   ├── tools.py                 custom SentimentAnalysisTool
+│   ├── instructions/            guidelines the agents read
+│   │   ├── company_size_guidelines.md
+│   │   └── outreach_guidelines.md
+│   └── outputs/                 generated reports (git-ignored)
+├── frontend/                    white and cream UI (plain HTML, CSS, JS)
+│   ├── index.html               page layout: sidebar form, agent cards, results tabs
+│   ├── style.css                cream theme and responsive styles
+│   └── app.js                   calls the API, shows progress, renders Markdown results
+├── environment.yml              conda environment
 ├── requirements.txt
 ├── .env.example
+├── .gitignore
 ├── LICENSE
 └── README.md
-```
 
 ## Environment Setup
 ```venv
